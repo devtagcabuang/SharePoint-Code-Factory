@@ -1,0 +1,70 @@
+<!-- REDESIGN WORLD CLOCK
+     WRITTEN BY: TRISHIA ANN CABUANG
+-->
+
+<!-------------------------------------  STYLING  ------------------------------------->
+<style>
+.clock-container {
+    width: 458px;
+    height: 260px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.clock-card {
+    justify-content: center;
+    text-align: center;
+    padding-top: 15px;
+    font-family: Lato !important;
+    font-size: 14px;
+    color: #503291;
+    line-height: 1.2;
+    padding-top: 50px;
+    }
+</style>
+
+<!------------------------------------- HTML PART  ------------------------------------->
+<div class="clock-container d-none d-md-block">
+    <div class="clock-card clock-card1">
+        <!-- TOKYO -->
+    </div>
+    <div class="clock-card clock-card2">
+        <!-- DARMSTADT -->
+    </div>
+    <div class="clock-card clock-card3">
+        <!-- BEIJING -->
+    </div>
+    <div class="clock-card clock-card4">
+        <!-- BOSTON -->
+    </div>
+</div>
+
+<!-------------------------------------  SCRIPT  ------------------------------------->
+<script>
+$(document).ready(function(){
+    DisplayTimeforCountry();
+    setInterval(DisplayTimeforCountry, 30000);  
+});
+
+function DisplayTimeforCountry(){
+    appendClocks("Asia/Tokyo", ".clock-card1", "Tokyo");
+    appendClocks("Europe/Berlin", ".clock-card2", "Darmstadt");
+    appendClocks("Asia/Shanghai", ".clock-card3", "Beijing");
+    appendClocks("America/New_York", ".clock-card4", "Boston");
+
+    function appendClocks(timezone, divclass, city){
+        let date = new Date().toLocaleString("en-gb", {timeZone: timezone, day: 'numeric', month: 'short', year: '2-digit'});
+        let time = new Date().toLocaleString("en-gb", {timeZone: timezone, hour: '2-digit', minute: '2-digit'});
+        let dateandtime = date.split(",");
+
+        $(divclass).html('');
+        $(divclass).append(
+            `<span style="color: #503291; font-size: 16px;"><b>${time}</b></span>`
+            + '<br>'
+            + `<span style="color: #eb3c96;"">${date}</span>`
+            + '<br>'
+            + `<span>${city}</span>`
+        );
+    }
+}
+</script>

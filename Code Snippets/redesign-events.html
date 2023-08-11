@@ -1,0 +1,155 @@
+<!-- REDESIGNED EVENTS
+     WRITTEN BY: TRISHIA ANN CABUANG 
+-->
+
+<!--------------------------------------- STYLING --------------------------------------->
+<style>
+#events-container {
+    width: 100%;
+    font-family: lato !important;
+}
+.event-card{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    border-bottom: 2px solid #f4f4f4;
+    padding: 10px;
+    background-color: #ffffff;
+}
+.event-date {
+    grid-row-start: span 2;
+    border-right: 3px solid #503291;
+    display: flex;
+    padding-right: 10px;
+    flex-direction: column-reverse;
+    justify-content: center;
+}
+.event-date-month{
+    text-align: right;
+}
+.event-date-day {
+    font-weight: bold !important;
+    font-size: 22px !important;
+    color: #eb3c96;
+    text-align: right;
+}
+.event-date-time {
+    grid-column-start: span 2;
+    text-align: right;
+}
+.mbodyStyle .event-title {
+    text-decoration: none;
+    color: #503291;
+    padding-left: 10px;
+    font-family: Verdana !important;
+}
+.mbodyStyle .event-title:hover {
+    text-decoration: underline;
+    color: #503291;
+}
+.event-location {
+    text-align: left;
+    font-size: 12px !important;
+    padding-left: 10px;
+}
+.home-wp-header span:hover {
+    text-decoration: none;
+}
+.events-footer-link {
+    padding: 10px;
+    text-align: right;	
+    border-radius: 0 0 10px 10px !important;
+    background-color: #fff;
+    border: 0px !important;
+}
+.events-footer-link a {
+    color: #eb3c96 !important;
+    font-weight: bold !important;
+}
+.events-footer-link a:hover {
+    color: #503291 !important;
+    text-decoration: none; 
+}
+.events-footer-container {
+    background-color: #f4f4f4;
+    border: 0px !important;
+    border-bottom: none !important;
+}
+</style>
+
+<!--------------------------------------- HTML PART--------------------------------------->
+<div id="events-container">
+</div>
+<div class="events-footer-container">
+    <div class="events-footer-link">
+        <a href="https://evarooms.merckgroup.com/Topic/Top-Sandbox/Lists/TrishEvents/Calendar.aspx">ALL EVENTS</a>
+    </div>
+</div>
+
+<!--------------------------------------- SCRIPT--------------------------------------->
+<script type="text/javascript">
+$(document).ready(function(){
+    getSPCurrentTime(_spPageContextInfo.webAbsoluteUrl)
+    .done(function(value)
+    {
+        var requestUrl = "https://evarooms.merckgroup.com/Topic/Top-Sandbox/_api/web/lists/GetByTitle('TrishEvents')/items?$orderby=Start asc&$top=10&$filter=End+ge+datetime'"+value.toISOString()+"'";
+        $.ajax({
+            url: requestUrl,
+            type: "GET",
+            headers:
+            {
+                "Accept": "application/json;odata=verbose",
+                "Content-Type": "application/json;odata=verbose",
+                "X-RequestDigest": $("#__REQUESTDIGEST").val(),
+                "IF-MATCH": "*",
+                "X-HTTP-Method": null
+            },
+            cache: false,
+            success: function(data){
+            for (var i = 0; i < data.d.results.length; i++)
+                {
+                    var item = data.d.results[i];
+                    var eventdate = new Date(item.Start);
+                    // construct date card
+                    $("#events-container").append(
+                        `<div class="event-card${i} event-card">`
+                            + `<div class="event-date${i} event-date">`
+                                + `<div class="event-date-day">${eventdate.getDate()}</div>`
+                            + '</div>'
+                        + '</div>'
+                    );		
+                    $(".event-date"+i).append(
+                        `<div class="event-date-month">${eventdate.toLocaleString('default', {month: 'short'})}</div>`
+                    );		
+                    $(".event-card"+i).append(
+                        `<a class="event-title" href="${item.Link}" target="_blank">`
+                        + `${item.Title}`
+                        + '</a>'
+                    );
+                    $(".event-card"+i).append(
+                        `<div class="event-location">${item.Location}</div>`
+                    );
+                }
+            },
+            error: function(data)
+            {
+                $("#events-container").append("JSON Fail:"+data.responseJSON.error);
+            }
+        });
+    })
+    .fail(
+    function(error){
+        console.log(JSON.stringify(error));
+    });
+    function getSPCurrentTime(webUrl)
+    {
+        return $.ajax({
+            url: webUrl + "/_api/web/RegionalSettings/TimeZone",
+            method: "GET",
+            headers: { "Accept": "application/json; odata=verbose" }
+        }).then(function(data){
+                var offset = data.d.Information.Bias / 60.0; 
+                return new Date( new Date().getTime() - offset * 3600 * 1000);
+        });
+    }
+});
+</script>

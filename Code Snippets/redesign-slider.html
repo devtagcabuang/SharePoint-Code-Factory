@@ -1,0 +1,99 @@
+<!-- REDESIGNED SLIDER
+     WRITTEN BY: TRISHIA ANN CABUANG 
+-->
+<head>
+    <link rel="stylesheet" href="https://evarooms.merckgroup.com/Topic/Top-Sandbox/Code%20Snippets/Trishia/Swiper/swiper-bundle.min.css">
+    <script src="https://evarooms.merckgroup.com/Topic/Top-Sandbox/Code%20Snippets/Trishia/Swiper/swiper-bundle.min.js"></script>
+</head>
+
+<style>
+   .swiper-container{
+    background-color: #96d7d2;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    width: 930px !important;
+    height: 100% !important;
+    }
+
+    .swiper-pagination-bullet {
+    background-color: #cdecea;
+    }
+
+    .swiper-button-next {
+    color: #cdecea;
+    }
+
+    .swiper-button-prev {
+    color: #cdecea;
+    } 
+</style>
+
+<div class="swiper-container">
+    <div class="swiper-wrapper" id="swiper-wrapped">
+    </div>
+  
+    <!-- NAVIGATION & PAGINATION FUNCTIONALITIES -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+</div>
+
+<!------------------------------------------------- API INJECTION SCRIPT & SWIPER FUNCTION JS ------------------------------------------------->
+<script type="text/javascript">
+  $(document).ready(function(){
+    // API SOURCE URL 
+    var requestUrl = "https://evarooms.merckgroup.com/Topic/Top-Sandbox/_api/web/lists/getbytitle('TrishiaSlider')/items?$select=*,FileLeafRef,FileRef&$Show=1&$orderby=Order0%20asc";
+  
+    $.ajax({
+        url: requestUrl,
+        type: "GET",
+        headers:
+        {
+          "Accept": "application/json;odata=verbose",
+          "Content-Type": "application/json;odata=verbose",
+          // "X-RequestDigest": $("#_REQUESTDIGEST").val(),
+          // "IF-MATCH": "*",
+          // "X-HTTP-Method": null,
+        },
+        cache: false,
+        success: function (data) {
+          $(data.d.results).each(function (j) {
+              var item = '<div class="swiper-slide">'
+                       + '<a href="' + this.Link.Url + '" target="_blank">' 
+                       + '<img src="' + this.FileRef + '"alt="">'
+                       + '</a>'
+                       + '</div>';
+              $("#swiper-wrapped").append(item);
+          });
+        },
+        error: function (data) {
+          console.log("REST API Result " + data.d.results)
+        }
+      });
+      // END OF AJAX 
+  });
+  // END OF DOCUMENT 
+  </script>
+  
+  <!-- SWIPER FUNCTIONALITIES SCRIPT -->
+  <!-- <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script> -->
+  
+<script>
+  var swiper = new Swiper(".swiper-container", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    // loop: true,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+</script>

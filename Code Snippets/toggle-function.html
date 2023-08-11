@@ -1,0 +1,55 @@
+<!-- OPTIMIZED TOGGLING FUNCTION FOR SHAREPOINT
+     WRITTEN BY: TRISHIA ANN CABUANG
+     DATE WRITTEN: AUGUST 10, 2023
+     VERSION: 1.0 -->
+
+<!-- BUTTON -->
+<div class="filter-wrapper">
+    <div class="filter-button" onclick="toggleFilterBox();">
+        <img src="https://evarooms.merckgroup.com/Organization/GVAP/en-us/PublishingImages/News%20Page/Weekly%20Digest/icon-filter.png" alt="filter box icon">
+        <div class="gp-h6 gp-rp">Filter</div>
+    </div>
+</div>
+<!-- CONTENT TO TOGGLE -->
+<div class="wd-date-wrapper" hidden>
+    <div class="wd-date-dropdown">
+        <!-- DATE RANGE PICKER -->
+        <label for="start-picker" class="input-label gp-rp gp-h6">Date From: </label>
+            <input type="date" class="gp-h6" id="date-from" name="dateFrom"/>
+        <label for="start-picker" class="input-label gp-rp gp-h6">Date To: </label>
+            <input type="date" class="gp-h6" id="date-from" name="dateFrom"/>
+
+        <!-- DROPDOWN -->
+        <div class="date-picker-wrapper">
+            <div class="monthPicker">
+                <select>
+                    <option value="All News">All News</option>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!------------------ SCRIPTING -------------------->
+<script>
+    // TOGGLE FUNCTION
+    // DEFAULT: HIDE
+    // WHEN CLICKED, WILL SHOW FILTER BARS AND DROPDOWN
+    // WHEN CLICKED AGAIN, WILL HIDE FILTER BARS AND DROPDOWN
+let isFilterHidden = true;
+function toggleFilterBox(){
+     // false if present, weird behavior
+     if (isFilterHidden){ 
+          $('.wd-date-wrapper').attr('hidden', null);
+          isFilterHidden = false;
+     }
+     else {
+          $('.wd-date-wrapper').attr('hidden', '');
+          isFilterHidden = true;
+     }   
+}
+</script>
