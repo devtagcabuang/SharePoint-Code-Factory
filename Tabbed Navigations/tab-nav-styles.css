@@ -1,0 +1,364 @@
+/* STYLES FOR TABBED NAVIGATION PAGE */
+
+/**************** FROM EVA MASTER CSS ****************/
+.ms-rtestate-field ul {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.ms-rtestate-field p {
+    padding-bottom: 0px !important;
+}
+.ms-rtestate-field h1, div.ms-fullWidth div.ms-rtestate-field h1:first-child, div.mCEWP_NoHeading div.ms-rtestate-field h1:first-child, .fieldControl.NewBorder div.ms-rtestate-field h1:first-child {
+    padding-top: 0px !important;
+}
+.ms-rtestate-field a {
+    font-family: Verdana !important;
+    font-size: 12px !important;
+}
+/**************** END OF EVA MASTER CSS ****************/
+
+
+/*********** TAB NAV INTRODUCTION ***********/
+.tab-nav-introduction {
+    background-image: url('https://evarooms.merckgroup.com/Topic/Top-Sandbox/communication-support-showroom/PublishingImages/EVA%20Catalogue/Tabbed%20Navigation/bg-introduction.png');
+    background-repeat: no-repeat;
+    background-size: 576px 350px;
+}
+.tn-intro-text-container {
+    width: 346px;
+    padding: 20px 0px 20px 10px;
+}
+.last {
+    margin-bottom: 0px !important;
+}
+/*********** END OF TAB NAV INTRODUCTION ***********/
+
+
+/*********** CALL TO ACTION BANNER ***********/
+.call-to-action-container {
+    background-image: url('https://evarooms.merckgroup.com/Topic/Top-Sandbox/communication-support-showroom/PublishingImages/EVA%20Catalogue/Tabbed%20Navigation/bg-banner-CallToAction.png');
+    background-repeat: no-repeat;
+    background-size: 576px 93px;
+}
+.cta-bucket {
+    padding-top: 15px;
+    padding-left: 150px;
+    padding-bottom: 15px;
+}
+.cta-bucket-text {
+    line-height: 3px;
+    padding-top: 15px;
+}
+/*********** END OF CALL TO ACTION BANNER ***********/
+
+
+/*********** STYLE FOR SAMPLE 1 ***********/
+.nav-wrapper {
+    margin: 0px auto;
+    background-color: #ffffff; /* Old browsers */
+}
+    /*** STYLE FOR SAMPLE 1 & 3 ****/
+.nav-wrapper ul, .nav-wrapper li, .s3-nav-wrapper ul, .s3-nav-wrapper li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+.nav-wrapper li, .s3-nav-wrapper li {
+    outline: 0;
+    text-decoration: none;
+    -webkit-transition-property: background color;
+    -moz-transition-property: background color;
+    -o-transition-property: background color;
+    -ms-transition-property: background color;
+    transition-property: background color;
+    -webkit-transition-duration: 0.12s;
+    -moz-transition-duration: 0.12s;
+    -o-transition-duration: 0.12s;
+    -ms-transition-duration: 0.12s;
+    transition-duration: 0.12s;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    -ms-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+#v-nav, #w-nav {
+    height: 60%;
+    margin: auto;
+}
+    /*** END OF STYLE FOR SAMPLE 1 & 3 ****/
+#v-nav > ul {
+    float: left;
+    width: 100px;
+    display: block;
+    position: relative;
+    margin: auto 0 !important;
+    padding: 30px 0px 0px 20px !important;
+}
+#v-nav > ul > li {
+    width: 122px;
+    list-style-type: none;
+    display: block;
+    position: relative;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: Verdana !important;
+    padding: 10px 16px !important;
+    background-image: url('https://evarooms.merckgroup.com/Topic/Top-Sandbox/communication-support-showroom/PublishingImages/EVA%20Catalogue/Tabbed%20Navigation/bg-sample1.png');
+    background-repeat: no-repeat;
+    background-size: 122px 42px;
+}
+#v-nav > ul > li.current {
+    color: #eb3c96;
+    font-weight: bold;
+    border-right: none;
+    z-index: 10;
+    background-image: url('https://evarooms.merckgroup.com/Topic/Top-Sandbox/communication-support-showroom/PublishingImages/EVA%20Catalogue/Tabbed%20Navigation/bg-sample1-active.png');
+    background-repeat: no-repeat;
+    background-size: 142px 42px;
+}
+#v-nav > ul > li:hover {
+    cursor: pointer;
+    color: #eb3c96;
+    background-image: url('https://evarooms.merckgroup.com/Topic/Top-Sandbox/communication-support-showroom/PublishingImages/EVA%20Catalogue/Tabbed%20Navigation/bg-sample1-hover.png');
+    background-repeat: no-repeat;
+    background-size: 122px 42px;
+}
+#v-nav > ul > li.current:hover, #v-nav > ul > li.current:focus {
+    background-image: url('https://evarooms.merckgroup.com/Topic/Top-Sandbox/communication-support-showroom/PublishingImages/EVA%20Catalogue/Tabbed%20Navigation/bg-sample1-active.png');
+    background-repeat: no-repeat;
+    background-size: 142px 42px;
+}
+#v-nav > ul > li.first.current {
+    border-bottom: 1px dashed #503291;
+}
+#v-nav > div.tab-content {
+    margin-left: 150px;
+    background-color: #ffffff;
+    min-height: 250px;
+    position: relative;
+    padding: 20px 30px 0px 30px;
+}
+/*********** END OF STYLE FOR SAMPLE 1 ***********/
+
+
+/*********** STYLE FOR SAMPLE 2 ***********/
+.sample-one-tab-button,  .nav-tabs > a:hover {
+    width: 88.7px;
+    padding: 0px !important;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    text-align: center;
+    border: none !important;
+}
+.nav-tabs > li > a {
+    font-weight: 600 !important;
+    text-align: center !important;
+}
+.nav > li > a:hover, .nav-tabs > a:hover, .nav-tabs > .active > a, .nav-tabs > .active > a:hover  {
+    background-color: #503291 !important;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    margin: 0px 0px -1px 0px !important;
+}
+.tab-mid-item {
+    margin-left: 5px !important;
+}
+.sample-two-container {
+    background-image: url('https://evarooms.merckgroup.com/Topic/Top-Sandbox/communication-support-showroom/PublishingImages/EVA%20Catalogue/Tabbed%20Navigation/bg-sample2.png');
+    background-repeat: no-repeat;
+    background-size: 576px 383px;
+}
+#sample-one-navtab {
+    padding-top: 0px !important;
+}
+.sample-two-tab {
+    width: 370px;
+    padding: 15px
+}
+.s2-tab-content {
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    padding: 5px 0px 5px 10px;
+    background-color: #f4f4f4;
+    margin-top: -20px;
+    height: 290px;
+}
+.tab2-content {
+    padding: 5px;
+}
+/*********** END OF STYLE FOR SAMPLE 2 ***********/
+
+
+/*********** STYLE FOR SAMPLE 3 ***********/
+.s3-nav-wrapper {
+    background-image: url('https://evarooms.merckgroup.com/Topic/Top-Sandbox/communication-support-showroom/PublishingImages/EVA%20Catalogue/Tabbed%20Navigation/bg-sample3-withStick.png');
+    background-repeat: no-repeat;
+    background-size: 576px 340px;
+    height: 340px;
+    margin: 0px auto;
+    background-color: #ffffff;
+}
+#w-nav > ul {
+    float: left;
+    width: 100px;
+    display: block;
+    position: relative;
+    margin: auto 0 !important;
+    padding: 60px 0px 0px 10px !important;
+}
+#w-nav > ul > li {
+    width: 140px;
+    text-align: center;
+    list-style-type: none;
+    display: block;
+    position: relative;
+    margin-bottom: 3px;
+    color: #96d7d2;
+    padding: 10px 16px !important;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: Verdana !important;
+    background-image: url('https://evarooms.merckgroup.com/Topic/Top-Sandbox/communication-support-showroom/PublishingImages/EVA%20Catalogue/Tabbed%20Navigation/bg-sample3-button-before.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 140px 33px;
+}
+#w-nav > ul > li.current {
+    color: #eb3c96;
+    font-weight: bold;
+    border-right: none;
+    position: relative;
+    transition: all 0.3s ease 0s;
+    background-image: url('https://evarooms.merckgroup.com/Topic/Top-Sandbox/communication-support-showroom/PublishingImages/EVA%20Catalogue/Tabbed%20Navigation/bg-sample3-button-after.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 140px 33px;
+}
+#w-nav > ul > li:hover {
+    cursor: pointer;
+    color: #ffffff;
+    background-image: url('https://evarooms.merckgroup.com/Topic/Top-Sandbox/communication-support-showroom/PublishingImages/EVA%20Catalogue/Tabbed%20Navigation/bg-sample3-button-before-hover.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 140px 33px;
+}
+#w-nav > ul > li.current:hover, #w-nav > ul > li.current:focus {
+    background-image: url('https://evarooms.merckgroup.com/Topic/Top-Sandbox/communication-support-showroom/PublishingImages/EVA%20Catalogue/Tabbed%20Navigation/bg-sample3-button-after.png');
+    background-repeat: no-repeat;
+    background-size: 140px 33px;
+    color: #eb3c96;
+}
+#w-nav > div.w-tab-content {
+    margin-left: 150px;
+    min-height: 250px;
+    position: relative;
+    padding: 20px 20px 0px 100px;
+}
+.w-tab-content p {
+    margin-bottom: 30px;
+}
+    /*** CLICK HERE BUTTON ****/
+.tab3-content a {
+    background-color: #eb3c96;
+    padding: 7px 15px;
+    margin-left: 10px;
+    margin-top: 30px;
+    border-radius: 7px;
+    color: #ffffff;
+    font-weight: 600 !important;
+    font-family: Verdana !important;
+}
+.tab3-content a:hover {
+    text-decoration: none !important;
+    background-color: #503291;
+    color: #eb3c96;
+}
+    /*** CLICK HERE MODAL ****/
+.modal {
+    border-radius: 0px !important;
+}
+.modal > .modal-header {
+    margin: auto !important;
+}
+.modal-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.modal-head {
+    padding: 20px 15px 20px 15px;
+}
+.modal-header .close {
+    text-align: right !important;
+    padding-right:  20px !important;
+    margin-top: -6.5px !important;
+}
+.modal-header > .close:hover {
+    color: #000 !important;
+    text-decoration: none;
+    cursor: pointer;
+    text-shadow: none !important;
+    opacity: .4;
+    filter: alpha(opacity=40);
+}
+.modal > .modal-header > button {
+    opacity: 1 !important;
+    font-size: 35px !important;
+}
+.modal-body > p {
+    font-family: Verdana !important;
+    margin-bottom: 0px !important;
+    padding-bottom: 15px !important;
+}
+.sample3-footer{
+    padding: 10px;
+    background-color: #EBEBEB;
+    display: flex;
+    justify-content: end;
+}
+.sample3-btn{
+    color: #282828;
+    padding: 4px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+    width: 6em;
+    margin-right: 25px !important;
+}
+.sample3-btn:hover {
+    background-color: #503291 !important;
+    color: #FFF;
+}
+#modalSample3Dialog {
+    left: 50% !important;
+    position: absolute;
+    top: 50%;
+    width: 750px;
+    padding-top: 450px;
+    transform: translate(-50%, -50%);
+}
+
+/*START MEDIA QUERY */
+@media (width: 1280px) {
+    div#s3-modal1.modal.fade.in, div#s3-modal2.modal.fade.in, div#s3-modal3.modal.fade.in, div#s3-modal4.modal.fade.in{
+        top: 430px !important;
+    }
+}
+@media (width: 1536px) {
+    div#s3-modal1.modal.fade.in, div#s3-modal2.modal.fade.in, div#s3-modal3.modal.fade.in, div#s3-modal4.modal.fade.in{
+        top: 500px !important;
+    }
+}
+@media (width: 1920px) {
+    div#s3-modal1.modal.fade.in, div#s3-modal2.modal.fade.in, div#s3-modal3.modal.fade.in, div#s3-modal4.modal.fade.in{
+        top: 570px !important;
+    }
+}
+/* END MEDIA QUERY */
+
+
+/*********** END OF STYLE FOR SAMPLE 3 ***********/

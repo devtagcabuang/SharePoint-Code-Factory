@@ -1,0 +1,148 @@
+<!-- TABBED NAVIGATION VIA JQUERY
+     WRITTEN BY: TRISHIA ANN CABUANG
+-->
+
+<style>
+.lstrish-tabbed-materials {
+    padding-top: 10px !important;
+}
+
+.lstrish-tab-container {
+    display: grid;
+    grid-template-rows: 50px 3fr;
+    margin: 0px 20px 10px 20px !important;
+    padding: 10px;
+}
+.lstabbed-folder-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 0.5fr;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.lstabbed-nav{
+    background-color: #503291;
+    border: 1px solid #96d7d2;
+    padding: 10px 5px 10px 5px;
+    color: white !important;
+    font-family: Verdana !important;
+    letter-spacing: 1px;
+    border-top-right-radius: 10px;
+}
+
+.lstabbed-detailed-content, .lstabbed-detailed-content-default {
+    background-color: #96d7d2;
+    border-top-right-radius: 10px;
+    margin-top: -10px;
+    height: 250px;
+}
+.lstab-title-text {
+    font-family: Merck!important;
+    font-size: 16px !important;
+    color: #503291 !important;
+    letter-spacing: 1px;
+}
+.lstabbed-contents {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    padding: 10px;
+    height: 143px;
+}
+.lstab-image-pic {
+    width: 100px !important;
+}
+.lstab-text-description {
+    font-family: Verdana !important;
+    color: #503291 !important;
+    letter-spacing: 0.5px;
+    line-height: 5px;
+}
+.lstab-link-goto {
+    padding: 15px !important;
+    margin: 10px 15px 0px 15px !important;
+    background-color: #eb3c96;
+    color: #ffffff !important;
+    border-radius: 5px;
+}
+
+</style>
+    
+<div class="lstrish-tabbed-materials">
+    <div class="lstrish-tab-container">
+        <div class="lstabbed-folder-nav">
+            <a class="lstabbed-nav enablement-1" href="#">Enablement 1</a>
+            <a class="lstabbed-nav enablement-2" href="#">Enablement 2</a>
+            <a class="lstabbed-nav enablement-3" href="#">Enablement 3</a>
+        </div>
+        
+        <!-- ENABLEMENT LIST API HERE -->
+    </div>
+</div>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+    var requestUrl = "https://evarooms.merckgroup.com/Topic/Top-Sandbox/_api/web/lists/getbytitle('TrishEnablementList')/items?$select=*";
+    $.ajax({
+        url: requestUrl,
+        type: "GET",
+        headers:
+        {
+            "Accept": "application/json;odata=verbose",
+            "Content-Type": "application/json;odata=verbose",
+            // "X-RequestDigest": $("#__REQUESTDIGEST").val(),
+            // "IF-MATCH": "*",
+            // "X-HTTP-Method": null
+        },
+        cache: false,
+        success: function(data)
+        {
+            console.log("API Logging - START")
+            console.log("API Result: \n" + data)
+            console.log("API Logging - END")
+            for (let i = 0; i < data.d.results.length; i++) {
+                let item = data.d.results[i]
+                let counter = i + 1
+                let classTitle = ''
+                
+                console.log(`Result ${counter}: \n ${item}`)
+
+                if (i == 0) {
+                    classTitle = "lstabbed-detailed-content-default"
+                }
+                else {
+                    classTitle = "lstabbed-detailed-content"
+                }
+
+                $(".lstrish-tab-container").append(
+                    `<div id="enablement-${counter}" class="${classTitle}">`
+                        + `<h2 id="lstabbed-title" class="lstab-title-text">${item.Title}</h2>`
+                        + '<div class="lstabbed-contents">'
+                            + `<img id="lstabbed-image" class="lstab-image-pic" src="${item.ImgURL.Url}" alt="image">`
+                            + `<p id="lstabbed-description" class="lstab-text-description">${item.Description}</p>`
+                        + '</div>'
+                        + `<a id="lstabbed-link" class="lstab-link-goto" href="${item.Link.Url}" target="_blank" >Learn More</a>`
+                    + '</div>'
+                )
+
+                $(".lstabbed-nav").ready(function(){
+                    $('.lstabbed-detailed-content').hide();
+                    $('#' + $(this).attr('class')).show();
+                });
+            }
+        },
+        error: function(data)
+        {
+            console.log("Error Encountered: \n" + data)
+        }
+    });
+});
+
+(function() {
+    $('.lstabbed-nav').click(function(e) {
+        $('.lstabbed-detailed-content, .lstabbed-detailed-content-default').hide();
+        let lsClass = $(this).attr('class').split(" ") 
+        $('#' + lsClass[1]).show();
+        e.preventDefault();
+    });
+})();
+</script>

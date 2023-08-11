@@ -1,0 +1,81 @@
+<!--------------------------------------
+    TABBED NAVIGATION FOR SAMPLE 1
+     EVA SHOWROOM 
+-------------------------------------->
+
+<!-------------- TITLE SECTION -------------->
+<div class="sh-wrapper">
+   <div class="sh-header vs-vy vs-h5">
+      <div class="sh-header-title vs-fw-bold">Sample 1 |</div>
+      <div class="sh-subheader">TABBED NAVIGATION</div>
+   </div>
+</div>
+
+<!------- TABBED NAVIGATION FUNCTION -------->
+<section id="nav-wrapper" class="nav-wrapper">
+   <div id="v-nav">
+      <ul>
+         <li tab="tab1" class="v-first">WHY</li>
+         <li tab="tab2" class>PROS #1</li>
+         <li tab="tab3" class>PROS #2</li>
+         <li tab="tab4" class="v-last">PROS #3</li>
+      </ul>
+
+      <div class="tab-content" style="display: block;">
+         <span class="tab1-content">
+            <h2 class="vs-h2 vs-vm">Why Tabbed Navigation?</h2>
+            <p class="tab-nav-p vs-h6 vs-bl">Tabbed Navigation is a <b>good way to divide large amounts of information</b> into manageable chunks. It's also a great way to present topics that can be divided into several sub-topics.</p>
+            <p class="tab-nav-p vs-h6 vs-bl">It is also possible to include images or logos that correspond to the topic of your tabs.</p>
+         </span>
+      </div>
+
+      <div class="tab-content" style="display: none">
+         <span class="tab1-content">
+            <h2 class="vs-h2 vs-vm">Progressive Disclosure</h2>
+            <p class="tab-nav-p vs-h6 vs-bl">Tabs enable progressive disclosure of information, presenting the most essential or commonly accessed content int the primary tabs while providing less frequently used options in secondary or nested tabs.</p>
+            <p class="tab-nav-p vs-h6 vs-bl">This helps maintain a clean and focused interface.</p>
+         </span>
+      </div>
+      
+      <div class="tab-content" style="display: none">
+         <span class="tab1-content">
+            <h2 class="vs-h2 vs-vm">Clear Organization</h2>
+            <p class="tab-nav-p vs-h6 vs-bl">Tabs provide a visual and conceptual organization of content or functionalities. Users can easily understand the different sections or categories available and navigate between them.</p>
+         </span>
+      </div>
+
+      <div class="tab-content" style="display: none">
+         <span class="tab1-content">
+            <h2 class="vs-h2 vs-vm">Compact & Space-efficient</h2>
+            <p class="tab-nav-p vs-h6 vs-bl">Tabs allow you to present multiple options within a limited space. They help conserve screen real estate and are particular useful in responsive designs for smaller devices.</p>
+         </span>
+      </div>
+
+   </div>
+</section>
+<!------- END OF TABBED NAVIGATION FUNCTION -------->
+
+<!------- JAVASCRIPT FUNCTIONALITIES -------->
+<script type="text/javascript">
+$(function () {
+   var items = $('#v-nav>ul>li').each(function () {
+      $(this).click(function () {
+         //remove previous class and add it to clicked tab
+         items.removeClass('current');
+         $(this).addClass('current');
+
+         //hide all content divs and show current one
+         $('#v-nav>div.tab-content').hide().eq(items.index($(this))).show();
+      });
+   });
+
+      var firstItem = $('#v-nav>ul>li')[0];
+      $(firstItem).addClass('current');
+      $($('#v-nav>div.tab-content')[0]).show();
+});
+
+$(document).ready(function () {
+    // console.log( "ready!" );
+})
+</script>
+<!------- END OF JAVASCRIPT FUNCTIONALITIES -------->
