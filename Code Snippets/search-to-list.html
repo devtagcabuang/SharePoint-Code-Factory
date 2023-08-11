@@ -1,0 +1,71 @@
+<!-- SEARCH TO LIST
+     WRITTEN BY: TRISHIA ANN CABUANG -->
+
+<div class="search-wrapper">
+    <input type="search" class="gp-rp gp-h6" placeholder="Search Month" id="search-input" onsearch="checkSearchValue()" onkeyup="showHideClearButton()">
+    <div class="search-bar">
+        <p id="clear-input" class="gp-rp gp-h6" hidden onclick="clearInputSearch()" >X</p>
+        <img src="https://evarooms.merckgroup.com/Organization/GVAP/en-us/PublishingImages/News%20Page/Weekly%20Digest/icon-search.png" alt="Search" onclick="checkSearchValue()">
+    </div>
+</div>
+
+<script type="text/javascript">
+// SEARCH FUNCTIONS
+function checkSearchValue(){
+     $('.wd-results').empty();
+     let searchMonth = $('#search-input').val();
+     var requestUrl = _spPageContextInfo.webAbsoluteUrl + `/_api/web/lists/GetByTitle('Weekly Digest')/items?$select=*&$filter=Month eq '${searchMonth}'`;
+     $.ajax({
+          url: requestUrl,
+          type: "GET",
+          headers:
+          {
+               "Accept": "application/json;odata=verbose",
+               "Content-Type": "application/json;odata=verbose",
+               "X-RequestDigest": $("#__REQUESTDIGEST").val(),
+               "IF-MATCH": "*",
+               "X-HTTP-Method": null
+          },
+          success: function(data)
+          {
+               // GUARD STATEMENT
+               if ((data.d.results.length) == 0){
+                    console.log("FAILLLL")
+                    return;
+               }
+
+               // console.log("data here: " + JSON.stringify(data))
+               for (var r=0; r < data.d.results.length; r++){
+                    let rItem = data.d.results[r]
+
+                    $('.wd-results').append(
+                         `<div class="wd-results-container">`
+                              + `<div class="wd-results-info">`
+                                   + `<div class="wd-results-date gp-h7 gp-rp">${rItem.Publication}</div>`
+                                   + `<div class="wd-results-subdata">`
+                                        + `<div class="wd-results-title gp-h5 gp-vc">${rItem.Title}</div>`
+                                        + `<div class="wd-results-desc gp-h6 gp-bl">${rItem.Description}</div>`
+                                   + `</div>`
+                              + `</div>`
+
+                              + `<img class="wd-results-img" src="${rItem.Thumbnail.Url}" alt="">`
+                         + `</div>`
+                    )
+               }
+          }
+          
+     })
+}
+function showHideClearButton(){
+     if ($('#search-input').val() != ''){
+          $('#clear-input').attr('hidden', null)
+     }
+     else {
+          $('#clear-input').attr('hidden', '')
+     }
+}
+function clearInputSearch(){
+     $('#search-input').val('');
+     $('#clear-input').attr('hidden', '')
+}
+</script>
