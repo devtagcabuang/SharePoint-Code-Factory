@@ -1,0 +1,113 @@
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<style>
+    .faqs-accordion-contents {
+        gap: 10px !important
+    }
+    
+    details {
+        margin-bottom: 10px !important;
+        background-color: #ffffff !important;
+    }
+    
+    summary {
+        padding: 20px 10px 20px 10px;
+        background-color: #2dbecd;
+        font-family: Verdana !important;
+        color: #ffffff !important;
+        font-weight: 600 !important;
+    }
+    
+    summary::marker {
+        padding: 10px;
+        color: #ffffff;
+    }
+    
+    .ds-contents {
+        padding: 15px !important;
+    }
+    
+    .ds-contents p, .ms-rteElement-P {
+        color: #503291 !important;
+        font-family: Verdana !important;
+        font-size: 14px !important;
+    }
+    
+    .ds-contents ul li {
+        color: #503291 !important;
+        font-family: Verdana !important;
+        font-size: 14px !important;
+    }
+    
+    .ds-contents ul li::marker {
+        color: #503291 !important;
+    }
+    </style>
+
+<div id="faqs-acc-contents" class="faqs-accordion-contents">
+</div>
+
+<script type="text/javascript">
+	let title = []
+	let content = []
+
+	// JQUERY 
+	$(document).ready(function(){
+		var requestUrl = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('FAQs List')/items?$select=*&$orderby=Order0 asc&$filter=Show eq 1";
+		$.ajax({
+			url: requestUrl,
+			type: "GET",
+			headers:
+			{
+				"Accept": "application/json;odata=verbose",
+				"Content-Type": "application/json;odata=verbose",
+				"X-RequestDigest": $("#__REQUESTDIGEST").val(),
+				"IF-MATCH": "*",
+				"X-HTTP-Method": null
+			},
+			cache: false,
+			success: function(data)
+			{   
+                console.log(data)
+				for (var i = 0; i < data.d.results.length; i++)
+				{
+					var item = data.d.results[i]
+                    
+                    title.push(item.Question)
+					content.push(item.Answer)				
+
+                    $("#faqs-acc-contents").append(
+						'<details>'
+                            + '<summary>' + item.Question + '</summary>'
+                            + '<div class="ds-contents">'
+                            + item.Answer
+                            + '</div>'
+                        + '</details>'
+					)					
+				}
+
+                // ACCORDION FUNCTIONALITY. Fetch all the details element.
+                const details = document.querySelectorAll("details");
+
+                // Add the onclick listeners.
+                details.forEach((targetDetail) => {
+                    targetDetail.addEventListener("click", () => {
+                    // Close all the details that are not targetDetail.
+                        details.forEach((detail) => {
+                            if (detail !== targetDetail) {
+                            detail.removeAttribute("open");
+                            }
+                        });
+                    });
+                });
+				console.log("Content: " + content)
+			},
+			error: function(data)
+			{
+				
+			}
+		});
+	});
+</script>
