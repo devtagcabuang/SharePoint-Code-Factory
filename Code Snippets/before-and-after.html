@@ -1,0 +1,184 @@
+<!--------------------------------------
+BEFORE AND AFTER FUNCTION
+-------------------------------------->
+
+<!-------------- BEFORE AND AFTER FUNCTIONSTYLING -------------->
+<style>
+div.bnf-sample1-container {
+    width: 536px;
+    height: 880px;
+    position: relative;
+    margin: 20px;
+}
+/* BEFORE AND AFTER IMAGES */
+div.bnf-img {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+div.before {
+    width: 50%;
+    z-index: 2;
+    height: 860px;
+}
+div.after {
+    width: 100%;
+    z-index: 1;
+    height: 860px;
+}
+/* SLIDER */
+input.bnf-slider {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    background-color: transparent;
+    position: absolute;
+    margin: 0px;
+    z-index: 3;
+    cursor: pointer;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    transition: 0.25s all ease-in-out;
+    -moz-transition: 0.25s all ease-in-out;
+    -webkit-transition: 0.25s all ease-in-out;
+    z-index: 4;
+    top: -10px;
+}
+input.bnf-slider::-moz-range-thumb {
+    width: 6px;
+    height: 880px;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+input.bnf-slider::-webkit-slider-thumb {
+    width: 6px;
+    height: 860px;
+    background-color: #ffffff;
+    cursor: pointer;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+/* SLIDER BUTTON */
+div.bnf-slider-button {
+    size: 30px;
+    pointer-events: none;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    -moz-broder-radius: 50%;
+    -webkit-border-radius: 50%;
+    background-color: #ffffff;
+    left: calc(50% - 18px);
+    top: calc(50% - 18px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+div.bnf-slider-button:before {
+    content: '';
+    padding: 3px;
+    display: inline-block;
+    border: solid #5D5D5D;
+    border-width: 0 2px 2px 0;
+    transform: rotate(135deg);
+}
+div.bnf-slider-button:after {
+    content: '';
+    padding: 3px;
+    display: inline-block;
+    border: solid #5D5D5D;
+    border-width: 0 2px 2px 0;
+    transform: rotate(-45deg);
+}
+/* LABEL */
+.label-design {
+    z-index: 5;
+    font-family: Verdana !important;
+    color: #FFFFFF !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    top: 6px;
+}
+div.label-before {
+    display: block;
+    position: absolute;
+    left: 15px;
+    opacity: 1;
+}
+div.label-after {
+    display: block;
+    position: absolute;
+    right: 15px;
+}
+.bnf-overlay-before, .bnf-overlay-after {
+    z-index: 4;
+    height: 860px;
+    background-color: #000000;
+    opacity: 0;
+}
+</style>
+<!-------------- END OF BEFORE AND AFTER FUNCTIONSTYLING -------------->
+
+<!-------------- TITLE SECTION -------------->
+<div class="sh-wrapper">
+    <div class="sh-header vs-vy vs-h5">
+        <div class="sh-header-title vs-fw-bold">Others |</div>
+        <div class="sh-subheader">SITE IMPROVEMENTS</div>
+    </div>
+</div>
+
+<!-- CONTENT AND FUNCTIONS -->
+<div class="os-broken-links-container vs-wh-bg">
+    <div class="bnf-description">
+        <p class="os-desc-text vs-rp vs-h6">Merck Netherland 'Before and After' demonstration:</p>
+        <i><p class="os-desc-text vs-rp vs-h6">Swipe the arrow below to interact with the demo.</p></i>
+    </div>
+
+    <div class="bnf-sample1-container">
+        <div class="bnf-img before" style="background-image: url('https://evarooms.merckgroup.com/Topic/Top-Sandbox/communication-support-showroom/PublishingImages/Website%20Catalogue/Other%20Services/img-before-os.png');">
+            <div class="label-before label-design">BEFORE</div>
+            <div class="bnf-overlay-before"></div>
+        </div>
+
+        <div class="bnf-img after" style="background-image: url('https://evarooms.merckgroup.com/Topic/Top-Sandbox/communication-support-showroom/PublishingImages/Website%20Catalogue/Other%20Services/img-after-os.png');">
+            <div class="label-after label-design">AFTER</div>
+            <div class="bnf-overlay-after"></div>
+        </div>
+
+        <input type="range" min="1" max="100" value="50" class="bnf-slider" name="bnf-slider-img" id="bnf-slide">
+        <div class="bnf-slider-button"></div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+$("input.bnf-slider").on("input change", function(slideEvent) {
+    var myElement = $(this).parents("div.bnf-sample1-container");
+    var elemPosition = slideEvent.target.value;
+    console.log("LOG: " + elemPosition);
+
+    myElement.find("div.before").css({width: elemPosition + "%"});
+    myElement.find("div.bnf-slider-button").css({left: `calc(${elemPosition}% - 18px)`});
+
+    if ((elemPosition) > 50){
+        myElement.find("div.label-after").css("display", "none");
+        myElement.find("div.label-before").css("display", "block");
+        myElement.find("div.bnf-overlay-after").css("opacity", "0.6");
+        myElement.find("div.bnf-overlay-before").css("opacity", "0");
+    }
+    else {
+        myElement.find("div.label-after").css("display", "block");
+        myElement.find("div.label-before").css("display", "none");
+        myElement.find("div.bnf-overlay-before").css("opacity", "0.6");
+        myElement.find("div.bnf-overlay-after").css("opacity", "0");
+    }
+});
+</script>
