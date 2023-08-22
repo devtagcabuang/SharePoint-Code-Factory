@@ -1,0 +1,96 @@
+<!-- RESPONSIVE MODAL -->
+<!-- STYLINGS -->
+<style>
+.modal {
+    border-radius: 0px !important;
+    width: 765px;
+    height: 500px;
+}
+.modal > .modal-header {
+    margin: auto !important;
+}
+.modal-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.modal-head {
+    padding: 20px 15px 20px 15px;
+}
+.modal-header .close {
+    text-align: right !important;
+    padding-right:  20px !important;
+    margin-top: -6.5px !important;
+}
+.modal-header > .close:hover {
+    color: #000 !important;
+    text-decoration: none;
+    cursor: pointer;
+    text-shadow: none !important;
+    opacity: .4;
+    filter: alpha(opacity=40);
+}
+.modal > .modal-header > button {
+    opacity: 1 !important;
+    font-size: 35px !important;
+}
+.modal-body {
+    height: 360px;
+}
+.modal-body img {
+    width: 735px;
+}
+.audit-modal-footer{
+    padding: 10px;
+    background-color: #EBEBEB;
+    display: flex;
+    justify-content: end;
+}
+.audit-sample-btn{
+    color: #282828;
+    padding: 4px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+    width: 6em;
+    margin-right: 25px !important;
+}
+.audit-sample-btn:hover {
+    background-color: #503291 !important;
+    color: #FFF;
+}
+
+/*START MEDIA QUERY */
+@media (width: 1280px) {
+    div#misspellings-modal.modal.fade.in, div#broken-links-modal.modal.fade.in {
+        top: 330px !important;
+    }
+}
+@media (width: 1536px) {
+    div#misspellings-modal.modal.fade.in, div#broken-links-modal.modal.fade.in {
+        top: 400px !important;
+    }
+}
+@media (width: 1920px) {
+    div#misspellings-modal.modal.fade.in, div#broken-links-modal.modal.fade.in {
+        top: 470px !important;
+    }
+}
+/* END MEDIA QUERY */
+</style>
+
+<!-- POINTER -->
+<a class="overlay-text vs-vm-bg" href="#broken-links-modal" role="button" data-toggle="modal">Click Here to Enlarge Image</a>
+
+<!-- MODAL -->
+<div id="broken-links-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-header vs-sb-bg">
+      <div id="myModalLabel" class="modal-head vs-rp vs-h3 vs-fw-bold-6">Broken Links Checker</div>
+      <button type="button" class="close vs-wh" data-dismiss="modal" aria-hidden="true">x</button>
+   </div>
+   <div class="modal-body">
+        <img class="modal-img" src="https://evarooms.merckgroup.com/Topic/Top-Sandbox/communication-support-showroom/PublishingImages/Website%20Catalogue/Other%20Services/img-page-with-broken-links.png" alt="">
+   </div>
+   <div class="audit-modal-footer vs-sb-bg">
+        <div class="audit-sample-btn vs-vm-bg vs-wh" data-dismiss="modal">Close</div>
+    </div>
+</div>
