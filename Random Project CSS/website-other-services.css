@@ -1,0 +1,141 @@
+/* EVA DEFAULT CSS */
+div.ms-fullWidth div.ms-rtestate-field p:first-child, div.mCEWP_NoHeading div.ms-rtestate-field p:first-child, .mNewLayoutContent .ms-webpart-zone div.ms-rtestate-field p, .mNewLayoutContent div.ms-fullWidth div.ms-rtestate-field h1, #mNewTwoColumnLeft div.ms-fullWidth div.ms-rtestate-field h1  {
+    padding: 0px !important;
+}
+.web-other-services-banner {
+    background-image: url("https://evarooms.merckgroup.com/Topic/Top-Sandbox/communication-support-showroom/PublishingImages/Website%20Catalogue/Other%20Services/banner-other-services-edited.png");
+    background-repeat: no-repeat;
+    background-size: 576px 350px;
+    height: 350px;
+}
+.web-intro-text-container {
+    width: 320px;
+    padding-top: 0px;
+    padding-left: 20px;
+}
+/* GENERAL STYLES */
+.os-description {
+    padding: 20px;
+}
+.bnf-description {
+    padding: 20px 20px 0px 20px;
+}
+.os-sample {
+    padding-bottom: 20px;
+}
+/* OVERLAY */
+.misspellings-img {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 167px;
+    position: relative;
+}
+.modal-thumbnail {
+    width: 350px;
+    height: 167px;
+    position: absolute;
+}
+.overlay {
+    position: absolute;
+    z-index: 3;
+    background-color: #ffffff;
+    opacity: 0.6;
+    width: 350px;
+    height: 167px;
+}
+/* BUTTON OVERLAY */
+.misspellings-img a {
+    position: absolute;
+    z-index: 4;
+    align-self: center;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: Verdana !important;
+    color: #ffffff;
+    font-weight: 800 !important;
+    transition: 0.3s;
+}
+.misspellings-img a:hover {
+    background-color: #96d7d2;
+    color: #503291;
+    transition: 0.3s;
+}
+/* MODALS */
+.modal {
+    border-radius: 0px !important;
+    width: 765px;
+    height: 500px;
+}
+.modal > .modal-header {
+    margin: auto !important;
+}
+.modal-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.modal-head {
+    padding: 20px 15px 20px 15px;
+}
+.modal-header .close {
+    text-align: right !important;
+    padding-right:  20px !important;
+    margin-top: -6.5px !important;
+}
+.modal-header > .close:hover {
+    color: #000 !important;
+    text-decoration: none;
+    cursor: pointer;
+    text-shadow: none !important;
+    opacity: .4;
+    filter: alpha(opacity=40);
+}
+.modal > .modal-header > button {
+    opacity: 1 !important;
+    font-size: 35px !important;
+}
+.modal-body {
+    height: 360px;
+}
+.modal-body img {
+    width: 735px;
+}
+.audit-modal-footer{
+    padding: 10px;
+    background-color: #EBEBEB;
+    display: flex;
+    justify-content: end;
+}
+.audit-sample-btn{
+    color: #282828;
+    padding: 4px 12px;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    width: 6em;
+    margin-right: 25px !important;
+}
+.audit-sample-btn:hover {
+    background-color: #503291 !important;
+    color: #FFF;
+    transition: 0.3s;
+}
+
+/*START MEDIA QUERY */
+@media (width: 1280px) {
+    div#misspellings-modal.modal.fade.in, div#broken-links-modal.modal.fade.in {
+        top: 330px !important;
+    }
+}
+@media (width: 1536px) {
+    div#misspellings-modal.modal.fade.in, div#broken-links-modal.modal.fade.in {
+        top: 400px !important;
+    }
+}
+@media (width: 1920px) {
+    div#misspellings-modal.modal.fade.in, div#broken-links-modal.modal.fade.in {
+        top: 470px !important;
+    }
+}
+/* END MEDIA QUERY */
