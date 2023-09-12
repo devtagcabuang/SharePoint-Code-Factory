@@ -1,0 +1,44 @@
+<!-- WEEKLY DIGEST CONTENT 
+    JS: weekly-digest.js-->
+
+<!-- IMPORT -->
+<script type="text/javascript" src="https://evarooms.merckgroup.com/Organization/GVAP/en-us/Code%20Snippets/Newspage/Weekly%20Digest/JS/weekly-digest.js"></script>
+
+<!-- FILTER & SELECTION SECTION -->
+<div class="wd-look-filter-container">
+    <div class="wd-look-search">
+        <!-- DROPDOWN BAR -->
+        <div class="month-picker-wrapper wd-date-dropdown">
+            <div class="monthPicker">
+                <select name="month-picker" id="month-picker-select" onchange="displayDropdownValue()">
+                    <option value="All News">All News</option>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- SEARCH BAR -->
+        <div class="search-wrapper">
+            <input type="search" class="gp-rp gp-h6" placeholder="Search Month" id="search-input" onsearch="displaySearchValue()" oninput="showHideClearButton()">
+            <div class="search-bar">
+                <p id="clear-input" class="gp-rp gp-h6" hidden onclick="clearInputSearch()" >&times;</p>
+                <img src="https://evarooms.merckgroup.com/Organization/GVAP/en-us/PublishingImages/News%20Page/Weekly%20Digest/icon-search.png" alt="Search" onclick="displaySearchValue()">
+            </div>
+        </div>
+    </div>
+
+    <div class="wd-results" style="padding: 0px !important;">
+        <!-- RESULTS CONTAINER HERE -->
+    </div>
+</div>
