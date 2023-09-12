@@ -1,0 +1,272 @@
+<!-- THIS CODE IS FOR WHAT DO WE DO PAGE -->
+<style>
+/* TABBED NAVIGATION */
+.nav-wrapper {
+    margin: 0px auto;
+    background-color: #503291; /* Old browsers */
+}
+.nav-wrapper li {
+    outline: 0;
+    text-decoration: none;
+    -webkit-transition-property: background color;
+    -moz-transition-property: background color;
+    -o-transition-property: background color;
+    -ms-transition-property: background color;
+    transition-property: background color;
+    -webkit-transition-duration: 0.12s;
+    -moz-transition-duration: 0.12s;
+    -o-transition-duration: 0.12s;
+    -ms-transition-duration: 0.12s;
+    transition-duration: 0.12s;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    -ms-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+#v-nav {
+    height: 100%;
+    margin: auto;
+    color: #503291;
+    font: 14px;
+    font-family:  Verdana, sans-serif !important;
+}
+#v-nav > ul {
+    float: left;
+    width: 200px;
+    display: block;
+    position: relative;
+    top: 0;
+    margin: auto 0 !important;
+    padding: 0px !important;
+    background-color: #503291;
+}
+#v-nav > ul > li {
+    width: 170px;
+    list-style-type: none;
+    display: block;
+    position: relative;
+    border-right-width: 0;
+    border-bottom: 2px dashed #96d7d2;
+    margin: auto;
+    color: #96d7d2;
+    padding: 15px 15px !important;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #503291;
+}
+#v-nav > ul > li:first-child {
+    border-top: 2px dashed #503291;
+}
+#v-nav > ul > li.current {
+    color: #503291;
+    font-weight: bold;
+    border-right: none;
+    z-index: 10;
+    background: #96d7d2 !important;
+    position: relative;
+}
+#v-nav > ul > li.current:after {
+    content: "";
+    background: #96d7d2;
+    height: 100%;
+    width: 15%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left:200px;
+    z-index: -1;
+    transition: all 0.3s ease 0s;
+    clip-path: polygon(0 0, 100% 45%, 100% 55%, 0 100%, 0 100%, 0 100%, 0 100%, 0 0, 0 0);
+}
+#v-nav > ul > li:hover {
+    cursor: pointer;
+    background-color: #eb3c96;
+    color: #503291;
+}
+#v-nav > ul > li.first.current {
+    border-bottom: 1px dashed #96d7d2;
+}
+#v-nav > div.tab-content {
+    margin-left: 150px;
+    background-color: #ffffff;
+    min-height: 450px;
+    position: relative;
+    z-index: 9;
+    padding: 12px;
+    display: none;
+    padding: 30px;
+}
+/* TAB CONTENT FORMAT */
+.tab1-content {
+    padding-left: 20px;
+}
+/* TEXTS */
+.wdwd-h2 {
+    font-family: Verdana !important;
+    color: #eb3c96 !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+}
+.wdwd-paragraph, .wdwd-main-list > li, .wdwd-main-list > li > a, .wdwd-sub-list > li, .wdwd-sub-list > li > a {
+    font-family: Verdana !important;
+    font-size: 14px !important;
+    color: #503291 !important;
+}
+/* LIST FORMAT */
+.wdwd-main-list {
+    width: 570px;
+    margin-left: 20px;
+}
+.wdwd-main-list > li {
+    padding-bottom: 3px;
+}
+.wdwd-sub-list {
+    margin-left: 25px;
+    padding-bottom: 5px;
+    width: 550px;
+}
+/* EFFECTS */
+.wdwd-main-list > li > a, .wdwd-sub-list > li > a {
+    cursor: pointer;
+    text-decoration: none !important;
+}
+</style>
+<!-------------- TITLE SECTION -------------->
+<div class="anz-wdwd-card-wrapper">
+    <div class="wdwd-head">
+        <!-- <div class="anz-wdwd-wrapper-title">WHAT DO<br><br>WE DO</div> -->
+        <div class="anz-wdwd-wrapper-title">WHAT DO WE DO</div>
+    </div>
+</div>
+ 
+ <!------- TABBED NAVIGATION FUNCTION -------->
+ <section id="nav-wrapper" class="nav-wrapper">
+   <div id="v-nav">
+       <ul>
+          <li tab="tab1" class="v-first">Power BI</li>
+          <li tab="tab2" class>Website/Portals</li>
+          <li tab="tab3" class>Digital Strategy & Digital Innovation</li>
+          <li tab="tab4" class>iConnect</li>
+          <li tab="tab5" class>Veeva Vault/Veritas</li>
+          <li tab="tab6" class>Marketing Cloud</li>
+          <li tab="tab7" class="v-last">Data Stewarts</li>
+       </ul>
+       
+       <!-- POWER BI CONTENT -->
+      <div class="tab-content" style="display: block;">
+         <div class="tab1-content">
+            <h2 class="wdwd-h2">Power BI</h2>
+            <p class="wdwd-paragraph">Power BI is a powerful business analytics tool developed by MIcrosoft that transforms raw data into visually appealing and interactive reports, dashboards, and data visualisations. It enables organisations to gain insights fromt their data, make data-driven decisions, and share those insights across the organisation.</p>
+            <p class="wdwd-paragraph"><b>Related resources:</b></p>
+            <ul class="wdwd-main-list">
+               <li><a href="https://mdigital-my.sharepoint.com/:x:/g/personal/m288500_one_merckgroup_com/ERJC8mcpRJpOlxu6BHhq0FUB-Pe_2YhAH_7h2ckpLWXK9A">https://mdigital-my.sharepoint.com/:x:/g/personal/m288500_one_merckgroup_com/ERJC8mcpRJpOlxu6BHhq0FUB-Pe_2YhAH_7h2ckpLWXK9A</a></li>
+            </ul>
+         </div>
+      </div>
+       
+       <!-- WEBSITE/PORTALS CONTENT -->
+       <div class="tab-content" style="display: none">
+         <div class="tab1-content">
+            <h2 class="wdwd-h2">Website/Portals</h2>
+            <ul class="wdwd-main-list">
+               <li>Website as a channel is one of the most complex ones and requires a lot of investments in terms of money, content and people's time. On the other hand it may be one of the most effective way of engaging with the HCPs as it serves as a single points of reference and a place where all the relevant content can be placed. When you connect it with other channels such as email and build cross-channels journeys it can be a powerful tool to interact with the HCPs and provide them with the information they need, want to see and are eager to search for.</li>
+               <li>Website creation and management</li>
+               <li><a href="https://mdigital-my.sharepoint.com/:w:/g/personal/m304333_one_merckgroup_com/EVZMfgnZdpRCiFv9psOthAgBIblCXQsWLvS4-9tsm9TpdA?e=0HQsNe&ovuser=db76fb59-a377-4120-bc54-59dead7d39c9%2CM304333%40ONE.merckgroup.com&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIyNy8yMzAzMDUwMTExMCIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D&CID=99C6EA50-99D9-4693-960D-B47561F019DD&wdLOR=c44A89299-D28C-4A91-80E6-D91F8EFD807A">Domain management framework</a></li>
+               <li>Privacy offer Merck AU Healthare - Colin Mannis</li>
+               <li>Website show room -
+                  <ul class="wdwd-sub-list">
+                     <li><a href="https://www.hcwebshowroom.merckgroup.com/home.html"><b>https://www.hcwebshowroom.merckgroup.com/home.html</b></a></li>
+                     <li><b>Username: Merck2016</b></li>
+                     <li><b>Password: merck@123</b></li>
+                  </ul>
+               </li>
+               <li><a href="https://evarooms.merckgroup.com/Topic/IC/how-to/how-to-get-aem-access">Helpful resources</a></li>
+            </ul>
+         </div>
+       </div>
+       
+       <!-- DIGITAL STRATEGY & DIGITAL INNOVATION -->
+      <div class="tab-content" style="display: none">
+         <div class="tab1-content">
+            <h2 class="wdwd-h2">Digital Strategy & Digital Innovation</h2>
+            <p class="wdwd-paragraph">Embracing digital transformation is vital for healthcare organizations to thrive in today's digital landscape and deliver exceptional patient experiences.</p>
+            <ul class="wdwd-main-list">
+               <li>Implex</li>
+               <li>Ominchannel</li>
+            </ul>
+         </div>
+      </div>
+       
+      <!-- iCONNECT CONTENT -->
+      <div class="tab-content" style="display: none">
+         <div class="tab1-content">
+            <h2 class="wdwd-h2">iConnect</h2>
+            <ul class="wdwd-main-list">
+               <li>IConnect Self-Serve - <a href="https://mdigital.sharepoint.com/sites/iConnect_ANZ/_layouts/15/AccessDenied.aspx?Source=https%3A%2F%2Fmdigital%2Esharepoint%2Ecom%2Fsites%2FiConnect%5FANZ%2FSitePages%2FiConnect%2DANZ%2DSelf%2DServe%2Easpx&correlation=9aa0c7a0%2Db004%2D6000%2Dd771%2D929fcec17942&Type=item&name=4467dec8%2D6dbb%2D4253%2Da705%2D0bcaca17de81&listItemId=10&listItemUniqueId=f5a8fd88%2Df283%2D4a75%2Db26a%2De911ef6a6361">iConnect ANZ Self-Serve (sharepoint.com)</a></li>
+            </ul>
+         </div>
+      </div>
+
+      <!-- VEEVA VAULT/ VERITAS CONTENT -->
+      <div class="tab-content" style="display: none">
+         <div class="tab1-content">
+            <h2 class="wdwd-h2">Veeva Vault/Veritas</h2>
+            <ul class="wdwd-main-list">
+               <li>Training materials</li>
+               <li><a href="https://evarooms.merckgroup.com/Organization/GBI/CCE-site/Documents/IMPLEX_Playbook_July_2022.pdf">Playbook</a></li>
+            </ul>
+         </div>
+      </div>
+
+      <!-- MARKETING CLOUD CONTENT -->
+      <div class="tab-content" style="display: none">
+         <div class="tab1-content">
+            <h2 class="wdwd-h2">Marketing Cloud</h2>
+            <ul class="wdwd-main-list">
+               <li>Marketing Cloud is a comprehensive digital marketing platform offered by Salesforce, a leading customer relationship management (CRM) company. It provides Merck with a suite of tools and capabilities to manage and optimize their marketing efforts across multiple channels.</li>
+               <li>Marketing Cloud enables businesses to create personalised customer journeys, automate marketing campaigns, and engage with their target audience through various channels such as email, mobile, social media, and advertising. It offers features like email marketing, mobile messaging, social media management, customer segmentation, marketing automation, data analytics, and more.</li>
+               <li>With Marketing Cloud, businesses can centralise their customer data, gain insights into customer behaviour and preferences, and deliver relevant and timely marketing messages to improve customer engagement and drive conversions. It helps marketers create targeted and personalized campaigns, track performance, and measure the effectiveness of their marketing efforts.</li>
+            </ul>
+         </div>
+      </div>
+
+      <!-- DATA STEWARTS CONTENT -->
+      <div class="tab-content" style="display: none">
+         <div class="tab1-content">
+            <h2 class="wdwd-h2">Data Stewarts</h2>
+            <ul class="wdwd-main-list">
+               <li>Please contact <a href="mailto:tiffany.vella@merckgroup.com">Tiffany Vella</a> for all data and HIPE related questions.</li>
+            </ul>
+         </div>
+      </div>
+ 
+   </div>
+ </section>
+ <!------- END OF TABBED NAVIGATION FUNCTION -------->
+ 
+ <!------- JAVASCRIPT FUNCTIONALITIES -------->
+ <script type="text/javascript">
+ $(function () {
+    var items = $('#v-nav>ul>li').each(function () {
+       $(this).click(function () {
+          //remove previous class and add it to clicked tab
+          items.removeClass('current');
+          $(this).addClass('current');
+ 
+          //hide all content divs and show current one
+          $('#v-nav>div.tab-content').hide().eq(items.index($(this))).show();
+       });
+    });
+ 
+       var firstItem = $('#v-nav>ul>li')[0];
+       $(firstItem).addClass('current');
+       $($('#v-nav>div.tab-content')[0]).show();
+ });
+ 
+ $(document).ready(function () {
+     // console.log( "ready!" );
+ })
+ </script>
+ <!------- END OF JAVASCRIPT FUNCTIONALITIES -------->
+ 
