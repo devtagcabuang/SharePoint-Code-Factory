@@ -1,0 +1,82 @@
+<!-- GVAP VIDEO TILE FOR HOMEPAGE -->
+<script type="text/javascript" src="//e.video-cdn.net/v2/embed.js"></script>
+<script type="text/javascript" src="https://evarooms.merckgroup.com/Organization/GVAP/en-us/Code%20Snippets/Global%20Code%20Snippets/JS/modal-video-with-pause.js"></script>
+
+<style>
+.mworld-container {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+.mworld-description {
+    padding-top: 5px;
+}
+/* IMAGE */
+.mworld-image {
+    width: 100px;
+    border-radius: 10px;
+    margin-top: -11px;
+    display: block;
+}
+.thumbnail-overlay {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 24px;
+    bottom: 0;
+    left: 74%;
+    right: 0;
+    height: 115px;
+    opacity: 0;
+    transition: .3s ease;
+}
+.image-container:hover .thumbnail-overlay {
+    opacity: 1;
+}
+.thumbnail-video {
+    position: absolute;
+    top: 44%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+.thumbnail-vid-icon {
+    width: 45px;
+}
+</style>
+
+<!-- CONTENT -->
+<div class="gp-rp-bg sub-cards-wrapper">
+    <div class="mworld-container sub-cards-container">
+        <div class="title-box-1">
+            <div class="welcome-details">
+                <div class="h2-blue-title gp-h2 gp-vc gp-fw-bold-6">GVAP Video</div>
+                <div class="mworld-description gp-wh gp-h6">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat, illo.</div>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <!-- Trigger Button -->
+            <img src="https://evarooms.merckgroup.com/Organization/GVAP/en-us/PublishingImages/Home/thumbnail-Mworld.png" alt="M-World Training Thumbnail" class="mworld-image">
+            <div class="modal-button thumbnail-overlay">
+                <a href="#video-modal" class="thumbnail-video">
+                    <img class="thumbnail-vid-icon" src="https://evarooms.merckgroup.com/Organization/GVAP/en-us/PublishingImages/General%20Images/icon-play-button.png" alt="">
+                </a>
+            </div>
+            <!-- Modal -->
+            <div class="popup" id="video-modal">
+                <a class="popup-overlay" href="#"></a>
+                <div class="popup-wrapper">
+                    <div class="modal-header">
+                        <span>M-World Training</span>
+                        <a class="popup-close" href="#">&#10006;</a>
+                    </div>
+                    <div><iframe id="vid-modal" src="https://e.video-cdn.net/video?video-id=BfZdo_Xm8qKh7dcXB3kTUF&player-id=-Mr6cJGRWExkaSoJY3y5-b&channel-id=99891" allowfullscreen frameborder="0" width="768" height="440"></iframe></div>
+                </div>
+            </div>
+            <!-- End of Modal -->
+        </div>
+
+    </div>
+</div>
