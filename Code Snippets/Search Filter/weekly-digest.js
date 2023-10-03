@@ -1,5 +1,6 @@
 // WEEKLY DIGEST NEWS FILTER
 // SEARCH & DROPDOWN FUNCTIONS
+// CAN SEARCH THROUGHT SUSBTRING OF 'CONTENT' IN SELECTED LIST FIELD
 
 $(document).ready(function(){
      console.log("Start: " + ($('.wd-results').children().length));
